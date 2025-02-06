@@ -1,1 +1,3 @@
 # LogicaCsharp
+
+Estrutura sequencial
