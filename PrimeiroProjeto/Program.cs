@@ -1,6 +1,9 @@
 ﻿using System;
 using System.Drawing;
 using System.Globalization;
+using System.Net;
+using System.Runtime.Intrinsics.X86;
+using System.Text;
 
 namespace PrimeiroProjeto
 {
@@ -218,18 +221,185 @@ namespace PrimeiroProjeto
             Console.WriteLine("SALARY =  U$" + salaryCalc.ToString("F2", CultureInfo.InvariantCulture));
             */
 
+            /*
             // URI 1010
 
+            //entrada peça 1
+            Console.WriteLine("Informe o código da peça 1, o número da peças 1 e o valor unitário de cada peça 1: (na mesma linha)");
+            string[] vet = Console.ReadLine().Split(' ');
+            int codigoPeca1 = int.Parse(vet[0]);
+            int numeroPecas1 = int.Parse(vet[1]);
+            double valorPeca1 = double.Parse(vet[2], CultureInfo.InvariantCulture);
+
+            //entrada peça 2
+            Console.WriteLine("Informe o código da peça 2, o número da peças 2 e o valor unitário de cada peça 2: (na mesma linha)");
+            string[] vet2 = Console.ReadLine().Split(' ');
+            int codigoPeca2 = int.Parse(vet2[0]);
+            int numeroPecas2 = int.Parse(vet2[1]);
+            double valorPeca2 = double.Parse(vet2[2], CultureInfo.InvariantCulture);
+
+            //calculo
+            double somaPecas = (numeroPecas1 * valorPeca1) + (numeroPecas2 *  valorPeca2);
+
+            //saída peças 1 e 2
+            Console.WriteLine("VALOR A PAGAR: " + somaPecas.ToString("F2", CultureInfo.InvariantCulture));
+            */
+
+            /*
             // URI 1014
+            Calcule o consumo médio de um automóvel sendo fornecidos a distância total percorrida (em Km) e o total de combustível gasto 
+            (em litros).
 
+            Entrada
+            O arquivo de entrada contém dois valores: um valor inteiro X representando a distância total percorrida (em Km), e um valor 
+            real Y representando o total de combustível gasto, com um dígito após o ponto decimal.
+
+            Saída
+            Apresente o valor que representa o consumo médio do automóvel com 3 casas após a vírgula, seguido da mensagem "km/l".
+
+            Console.WriteLine("Informe a distância total percorrida: ");
+            int X = int.Parse(Console.ReadLine());
+            Console.WriteLine("Informe o valor gasto em combustível: ");
+            double Y = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
+
+            double mediaConsumo = X / Y;
+
+            Console.WriteLine(mediaConsumo.ToString("F3", CultureInfo.InvariantCulture) + "km/l");
+            */
+
+            /*
             // URI 1016
+            Dois carros (X e Y) partem em uma mesma direção. O carro X sai com velocidade constante de 60 Km/h e o carro Y sai com 
+            velocidade constante de 90 Km/h.
 
+            Em uma hora (60 minutos) o carro Y consegue se distanciar 30 quilômetros do carro X, ou seja, consegue se afastar um quilômetro 
+            a cada 2 minutos.
+
+            Leia a distância (em Km) e calcule quanto tempo leva (em minutos) para o carro Y tomar essa distância do outro carro.
+
+            Entrada
+            O arquivo de entrada contém um número inteiro.
+
+            Saída
+            Imprima o tempo necessário seguido da mensagem "minutos".
+
+
+            int distancia, tempo;
+
+            distancia = int.Parse(Console.ReadLine());
+
+            tempo = distancia * 2;
+
+            Console.WriteLine(tempo + " minutos");
+            */
+
+            /*
             // URI 1017
+            Joaozinho quer calcular e mostrar a quantidade de litros de combustível gastos em uma viagem, ao utilizar um automóvel que 
+            faz 12 KM/L. Para isso, ele gostaria que você o auxiliasse através de um simples programa. Para efetuar o cálculo, deve-se 
+            fornecer o tempo gasto na viagem (em horas) e a velocidade média durante a mesma (em km/h). Assim, pode-se obter distância 
+            percorrida e, em seguida, calcular quantos litros seriam necessários. Mostre o valor com 3 casas decimais após o ponto.
 
-            // URI 1005
+            Entrada
+            O arquivo de entrada contém dois inteiros. O primeiro é o tempo gasto na viagem (em horas) e o segundo é a velocidade média 
+            durante a mesma (em km/h).
 
+            Saída
+            Imprima a quantidade de litros necessária para realizar a viagem, com três dígitos após o ponto decimal
+
+
+            int tempo, velocidade, distancia;
+            double litros;
+
+            tempo = int.Parse(Console.ReadLine());
+            velocidade = int.Parse(Console.ReadLine());
+
+            distancia = tempo * velocidade;
+
+            // aqui eh importante colocar o .0 depois do 12, ou entao fazer o casting (double)
+            litros = distancia / 12.0;
+
+            Console.WriteLine(litros.ToString("F3", CultureInfo.InvariantCulture));
+            */
+
+            /*
+            // URI 1005 //média ponderada
+            Leia 2 valores de ponto flutuante de dupla precisão A e B, que correspondem a 2 notas de um aluno. A seguir, calcule a média 
+            do aluno, sabendo que a nota A tem peso 3.5 e a nota B tem peso 7.5(A soma dos pesos portanto é 11).Assuma que cada nota pode 
+            ir de 0 até 10.0, sempre com uma casa decimal.
+
+            Entrada
+            O arquivo de entrada contém 2 valores com uma casa decimal cada um.
+
+            Saída
+            Imprima a mensagem "MEDIA" e a média do aluno conforme exemplo abaixo, com 5 dígitos após o ponto decimal e com um espaço em 
+            branco antes e depois da igualdade. Utilize variáveis de dupla precisão(double) e como todos os problemas, não esqueça de 
+            imprimir o fim de linha após o resultado, caso contrário, você receberá "Presentation Error".
+
+            double A, B, media;
+
+            A = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
+            B = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
+
+            media = ((A * 3.5) + (B * 7.5)) / 11;
+
+            Console.WriteLine("MEDIA = " + media.ToString("F5", CultureInfo.InvariantCulture));
+            */
+
+            /*
             // URI 1006
+            Leia 3 valores, no caso, variáveis A, B e C, que são as três notas de um aluno. A seguir, calcule a média do aluno, sabendo
+            que a nota A tem peso 2, a nota B tem peso 3 e a nota C tem peso 5.Considere que cada nota pode ir de 0 até 10.0, sempre com 
+            uma casa decimal.
 
+            Entrada
+            O arquivo de entrada contém 3 valores com uma casa decimal, de dupla precisão(double).
+
+            Saída
+            Imprima a mensagem "MEDIA" e a média do aluno conforme exemplo abaixo, com 1 dígito após o ponto decimal e com um espaço em 
+            branco antes e depois da igualdade. Assim como todos os problemas, não esqueça de imprimir o fim de linha após o resultado, 
+            caso contrário, você receberá "Presentation Error".
+
+            double A, B, C, media;
+
+            A = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
+            B = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
+            C = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
+
+            media = (A * 2.0 + B * 3.0 + C * 5) / 10.0;
+
+            Console.WriteLine("MEDIA = " + media.ToString("F1", CultureInfo.InvariantCulture));
+            */
+
+            /* exercicio 2
+            Fazer um programa para ler as medidas da base e altura de um retângulo. Em seguida, mostrar o valor da área, perímetro
+            e diagonal deste retângulo, com quatro casas decimais, conforme exemplo.
+            
+
+            double b, a, area, perimetro, diagonal;
+
+            b = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
+            a = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
+
+            area = b * a;
+            perimetro = 2 * (b + a);
+            diagonal = Math.Sqrt(Math.Pow(b, 2.0) + Math.Pow(a, 2.0)); // raiz quadrada da base ao quadrado / (b, 2.0) significa base elevado ao quadrado.
+
+            Console.WriteLine("AREA = " + area.ToString("F4", CultureInfo.InvariantCulture));
+            Console.WriteLine("PERIMETRO = " + perimetro.ToString("F4", CultureInfo.InvariantCulture));
+            Console.WriteLine("DIAGONAL = " + diagonal.ToString("F4", CultureInfo.InvariantCulture));
+            */
+
+            /* exercicio 3
+            */
+
+            /* Exercicios para fazer do URI: 1009 (STRING), 1011 (CASTING), 1012 (GEOMETRIA), 1013 (ABS), 1015 (SQRT, POW)*/
+
+            /* exercicio 4 (URI 1019)
+             
+             */ 
+
+            /* Exercicios para fazer do URI: 1018, 1020, 1021, 1061 (MOD)*/ 
 
             Console.ReadLine();
         }
