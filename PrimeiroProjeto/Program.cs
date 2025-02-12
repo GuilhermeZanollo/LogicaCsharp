@@ -288,7 +288,7 @@ namespace PrimeiroProjeto
 
             distancia = int.Parse(Console.ReadLine());
 
-            tempo = distancia * 2;
+            tempo = distancia * 2; // Dessa forma, o carro Y se afasta 1 km a cada 2 minutos (já que 30 km / 60 min = 0,5 km/min, e 1 / 0,5 = 2 minutos).
 
             Console.WriteLine(tempo + " minutos");
             */
@@ -391,15 +391,47 @@ namespace PrimeiroProjeto
             */
 
             /* exercicio 3
+            // Fazer um programa para ler o nome (apenas uma palavra) e idade de duas pessoas. Ao final mostrar
+            uma mensagem com os nomes e a idade média entre essas pessoas, com uma casa decimal, conforme exemplo.
+
+            string[] vetor = Console.ReadLine().Split(' ');
+
+            string nome = vetor[0];
+            int age = int.Parse(vetor[1], CultureInfo.InvariantCulture);
+
+            string[] vetor2 = Console.ReadLine().Split(' ');
+
+            string nome2 = vetor2[0];
+            int age2 = int.Parse(vetor2[1], CultureInfo.InvariantCulture);
+
+            double idadeMedia = (age + age2) / 2.0;
+
+            Console.WriteLine("A idade média de " + nome + " e " + nome2 + " é de " + idadeMedia.ToString("F1", CultureInfo.InvariantCulture) + " anos");
+            */
+
+            /* exercicio 4 (URI 1019)
+            Leia um valor inteiro, que é o tempo de duração em segundos de um determinado evento em uma fábrica, e informe-o expresso no formato horas:minutos:segundos.
+
+            Entrada
+            O arquivo de entrada contém um valor inteiro N.
+
+            Saída
+            Imprima o tempo lido no arquivo de entrada (segundos), convertido para horas:minutos:segundos, conforme exemplo fornecido.
+            
+
+            int tempoDuracaoSegundos = int.Parse(Console.ReadLine());
+
+            int horas = tempoDuracaoSegundos / 3600;
+
+            int minutos = tempoDuracaoSegundos % 3600 / 60;
+
+            int segundos = tempoDuracaoSegundos % 60;
+
+            Console.WriteLine(horas+":"+minutos+":"+segundos);
             */
 
             /* Exercicios para fazer do URI: 1009 (STRING), 1011 (CASTING), 1012 (GEOMETRIA), 1013 (ABS), 1015 (SQRT, POW)*/
-
-            /* exercicio 4 (URI 1019)
-             
-             */ 
-
-            /* Exercicios para fazer do URI: 1018, 1020, 1021, 1061 (MOD)*/ 
+            /* Exercicios DESAFIO para fazer do URI: 1018, 1020, 1021, 1061 (MOD)*/
 
             Console.ReadLine();
         }
